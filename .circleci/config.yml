@@ -12,8 +12,7 @@ jobs:
             - image: circleci/python:3.5.5
         steps:
             - checkout
-            - run: echo  "most importantly hello you"
-            - run: sleep 15
+            - run: python3 unitTestForScope.py
 workflows:
     version: 2
     one_and_two:
