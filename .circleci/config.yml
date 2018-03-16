@@ -6,15 +6,17 @@ jobs:
         steps:
             - checkout
             - run: echo "hello world"
+            - run: sleep 25
     two:
         docker:
             - image: circleci/python:3.5.5
         steps:
             - checkout
             - run: echo  "most importantly hello you"
-    workflows:
-        version: 2
-        one_and_two:
-            jobs:
-                -one
-                -two
+            - run: sleep 15
+workflows:
+    version: 2
+    one_and_two:
+        jobs:
+            -one
+            -two
